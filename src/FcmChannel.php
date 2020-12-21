@@ -93,7 +93,7 @@ class FcmChannel
     {
         try {
             $messaging = app('firebase.manager')->project($this->fcmProject)->messaging();
-        } catch (BindingResolutionException $e) {
+        } catch (\ReflectionException $e) {
             $messaging = app('firebase.messaging');
         }
 
